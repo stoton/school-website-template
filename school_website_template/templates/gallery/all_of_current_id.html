@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!-- przkazuje liste zdjec z ktorej galerii -->
+
+    {% for img in list_of_images %}
+        {{ img.title }}
+        <br/><br/>
+        <img src="{{ img.image.url }}"/>
+
+        <br/>
+    {% endfor %}
+
+
+</body>
+</html>

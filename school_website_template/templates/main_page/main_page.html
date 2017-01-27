@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="UTF-8">
+        <title>Strona główna</title>
+        {% load static from staticfiles %}
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="jumbotron">
+                <h1>Zespół Szkół Agro-technicznych im. Wincentego Witosa</h1>
+            </div>
+
+            {% for post in list_of_website_posts %}
+                <h3> {{ post.title }}</h3>
+                <img src="{{ post.image.url }}"/>
+                <br/><br/><br/>
+                <p> {{ post.content }}</p>
+                <p> {{ post.category }}</p>
+                <p> {{ post.author }}</p>
+                <p> {{ post.date }}</p>
+                dd
+            {% endfor %}
+        </div>
+    </body>
+</html>

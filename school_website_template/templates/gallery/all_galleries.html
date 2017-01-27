@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<style>
+    img {
+    width:540px;
+    height: auto;
+}
+
+</style>
+
+
+<p>
+ff
+
+</p>
+<body>
+{% for gallery in list_of_images %}
+   {% for photo in gallery.image_in_gallery.all|slice:":1" %}
+       <a href="{{ gallery.id }}">
+            <img src='{{ photo.image.url }}'/>
+       </a>
+   {% endfor %}
+{% endfor %}
+
+</body>
+</html>
