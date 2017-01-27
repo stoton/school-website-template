@@ -32,9 +32,9 @@ class Gallery(models.Model):
         verbose_name_plural = "Galerie"
 
 
-class ImageInGallery(models.Model):
+class GalleryImage(models.Model):
     gallery = models.ForeignKey(Gallery, on_delete=models.CASCADE, related_name='image_in_gallery')
-    image = models.ImageField(upload_to='gallery/')
+    image = models.ImageField(upload_to='gallery/%Y/%m/%d')
     title = models.CharField(max_length=200)
 
     def __str__(self):

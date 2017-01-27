@@ -1,12 +1,12 @@
 from django.contrib import admin
-from .models import WebsitePost, ImageInGallery, Gallery
+from .models import WebsitePost, GalleryImage, Gallery
 admin.site.register(WebsitePost)
-admin.site.register(ImageInGallery)
+admin.site.register(GalleryImage)
 admin.site.register(Gallery)
 
 
 class GalleryImageInline(admin.TabularInline):
-    model = ImageInGallery
+    model = GalleryImage
     extra = 3
 
 

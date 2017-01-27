@@ -18,12 +18,10 @@
             {% for post in list_of_website_posts %}
                 <h3> {{ post.title }}</h3>
                 <img src="{{ post.image.url }}"/>
-                <br/><br/><br/> 
                 <p> {{ post.content }}</p>
                 <p> {{ post.category }}</p>
                 <p> {{ post.author }}</p>
                 <p> {{ post.date }}</p>
-                dd
             {% endfor %}
         </div>
 		<p></p>
