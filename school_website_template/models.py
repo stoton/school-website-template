@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from .models_properties.website_post_properties import get_categories
-from author.decorators import with_author
+
 
 
 class WebsitePost(models.Model):
