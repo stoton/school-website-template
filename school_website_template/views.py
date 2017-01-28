@@ -1,6 +1,7 @@
 from django.views.generic.list import ListView
 from .models import WebsitePost, Gallery
-
+from django.views.generic.edit import CreateView
+from .forms import UploadForm
 
 class MainPageView(ListView):
     template_name = 'main_page/main_page.html'
@@ -26,3 +27,9 @@ class AllGalleriesView(ListView):
 
     def get_queryset(self):
         return Gallery.objects.all()
+
+class UploadView(CreateView):
+    model = Gallery
+    form_class = UploadForm
+    template_name = 'gallery/upload.html'
+    success_url = '/all'
