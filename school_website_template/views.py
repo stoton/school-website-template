@@ -28,6 +28,7 @@ class AllGalleriesView(ListView):
     def get_queryset(self):
         return Gallery.objects.all()
 
+
 class UploadView(CreateView):
     model = Gallery
     form_class = UploadForm
