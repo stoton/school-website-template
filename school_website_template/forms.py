@@ -1,6 +1,8 @@
+from __future__ import absolute_import
 from django import forms
 from multiupload.fields import MultiImageField
-from .models import Gallery, GalleryImage
+from .models import Gallery, GalleryImage, WebsitePost
+from ckeditor.fields import RichTextFormField
 
 
 class UploadForm(forms.ModelForm):
@@ -16,3 +18,10 @@ class UploadForm(forms.ModelForm):
         for each in self.cleaned_data['images']:
             GalleryImage.objects.create(image=each, gallery=instance)
         return instance
+
+
+class WebsitePostForm(forms.ModelForm):
+
+    class Meta:
+        model = WebsitePost
+        fields = ['content',]

@@ -1,18 +1,11 @@
 from django.db import models
 from django.contrib.auth.models import User
-from .models_properties.website_post_properties import get_categories
-
+from ckeditor_uploader.fields import RichTextUploadingField
 
 
 class WebsitePost(models.Model):
-    title = models.CharField(max_length=200)
-    content = models.TextField()
+    content = RichTextUploadingField()
     date = models.DateField(auto_now_add=True, blank=True)
-    category = models.CharField(max_length=80, choices=get_categories())
-    image = models.ImageField(upload_to='website_posts_images/%Y/%m/%d', null=True, blank=True)
-
-    def __str__(self):
-        return self.title
 
     class Meta:
         verbose_name = 'wpis'

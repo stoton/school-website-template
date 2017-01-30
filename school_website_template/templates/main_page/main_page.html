@@ -16,11 +16,7 @@
             </div>
 
             {% for post in list_of_website_posts %}
-                <h3> {{ post.title }}</h3>
-                <img src="{{ post.image.url }}"/>
-                <p> {{ post.content }}</p>
-                <p> {{ post.category }}</p>
-                <p> {{ post.author }}</p>
+                <p> {{ post.content|safe }}</p>
                 <p> {{ post.date }}</p>
             {% endfor %}
         </div>

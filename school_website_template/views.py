@@ -1,7 +1,11 @@
 from django.views.generic.list import ListView
 from .models import WebsitePost, Gallery
 from django.views.generic.edit import CreateView
-from .forms import UploadForm
+from .forms import UploadForm, WebsitePostForm
+from django.core.urlresolvers import reverse
+from django.views import generic
+from . import forms
+
 
 class MainPageView(ListView):
     template_name = 'main_page/main_page.html'
@@ -34,3 +38,10 @@ class UploadView(CreateView):
     form_class = UploadForm
     template_name = 'gallery/upload.html'
     success_url = '/all'
+
+
+class WebsitePostCreate(CreateView):
+    model = WebsitePost
+    form_class = WebsitePostForm
+    template_name = 'website_post/create_website_post.html'
+    success_url = '/main'
