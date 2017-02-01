@@ -12,6 +12,16 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
         <style type="text/css">
+
+            body {
+                background: url("/media/bg.png") no-repeat;
+                background-size: 100% 100%;
+            }
+
+            html {
+                height: 100%
+            }
+
             .form-style-9{
                 max-width: 900px;
                 background: #FAFAFA;
@@ -61,22 +71,25 @@
     </head>
 
     <body>
-        <div class="container">
-            <form action="" method="post" enctype="multipart/form-data" class="form-style-9">
-                {% csrf_token %}
-                <ul>
-                    <li>
-                        <input type="text" name="title_field" class="field-style field-split align-left" placeholder="Tytuł" id="form.title}}"/>
-                        <input type="text" name="author_field" class="field-style field-split align-right" placeholder="Autor" id="form.title }}"/>
-                    </li>
 
-                    <li>
-                       {{ form.content }}
-                    </li>
-
-                </ul>
-                <input type="submit" value="Opublikuj" class="btn btn-primary">
-            </form>
+        <div id="bg">
         </div>
+            <div class="container">
+                <form action="" method="post" enctype="multipart/form-data" class="form-style-9">
+                    {% csrf_token %}
+                    <ul>
+                        <li>
+                            <input type="text" name="title_field" class="field-style field-split align-left" placeholder="Tytuł" id="form.title}}"/>
+                            <input type="text" name="author_field" class="field-style field-split align-right" placeholder="Autor" id="form.title }}"/>
+                        </li>
+
+                        <li>
+                            {{ form.content }}
+                        </li>
+
+                    </ul>
+                    <input type="submit" value="Opublikuj" class="btn btn-primary">
+                </form>
+            </div>
     </body>
 </html>

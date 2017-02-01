@@ -123,7 +123,14 @@ CKEDITOR_UPLOAD_PATH = "uploads/"
 CKEDITOR_CONFIGS = {
     'default': {
         'toolbar': 'Full',
-        'width': 826
+        'width': 826,
+         'stylesSet': [
+            {
+                "name": 'Lead',
+                "element": 'p',
+                "attributes": {'class': 'lead'},
+            },
+        ],
     },
 
 }
