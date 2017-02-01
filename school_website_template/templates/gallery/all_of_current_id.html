@@ -5,11 +5,9 @@
     <title>Title</title>
 </head>
 <body>
-<!-- przkazuje liste zdjec z ktorej galerii -->
-
 
     {% for img in list_of_images %}
-        <div id="ScalingImage">
+        <div>
             {{ img.title }}
             <br/><br/>
             <img class="img" src="{{ img.image.url }}" onload="resize_image(this)"/>
