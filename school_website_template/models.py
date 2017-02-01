@@ -6,6 +6,8 @@ from ckeditor_uploader.fields import RichTextUploadingField
 class WebsitePost(models.Model):
     content = RichTextUploadingField()
     date = models.DateField(auto_now_add=True, blank=True)
+    author = models.CharField(max_length=150, blank=True)
+    title = models.CharField(max_length=100)
 
     class Meta:
         verbose_name = 'wpis'

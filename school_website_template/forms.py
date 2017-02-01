@@ -24,4 +24,4 @@ class WebsitePostForm(forms.ModelForm):
 
     class Meta:
         model = WebsitePost
-        fields = ['content',]
+        fields = ['content', 'author', 'title']

@@ -3,23 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <style>
-        #ScalingImage
-        {
-            float:left;
-            overflow: hidden;
-            width: 25vw;
-            height: 25vw;
-            background-color: #ac7339;
-            position: relative;
-        }
-        #ScalingImage img
-        {
-            overflow: hidden;
-            position: absolute;
-        }
-    </style>
-
 </head>
 <body>
 <!-- przkazuje liste zdjec z ktorej galerii -->
@@ -29,21 +12,20 @@
         <div id="ScalingImage">
             {{ img.title }}
             <br/><br/>
-            <img class="img" src="{{ img.image.url }}"/>
+            <img class="img" src="{{ img.image.url }}" onload="resize_image(this)"/>
             <br/>
         </div>
 
     {% endfor %}
 
-<script>
-        for(i=0;i<document.getElementsByTagName("img").length;i++)
-        {
-            var img = document.getElementsByClassName("img")[i];
-            img.style.width="150%";
-            img.style.height="auto";
-            img.style.left = "-" + 30 + "%";
-        }
-    </script>
-
 </body>
+
+<script>
+
+    function resize_image(image) {
+        image.style.width = '30%'
+        image.style.height = 'auto'
+    }
+
+</script>
 </html>
