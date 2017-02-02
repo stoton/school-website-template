@@ -124,13 +124,6 @@ CKEDITOR_CONFIGS = {
     'default': {
         'toolbar': 'Full',
         'width': 826,
-         'stylesSet': [
-            {
-                "name": 'Lead',
-                "element": 'p',
-                "attributes": {'class': 'lead'},
-            },
-        ],
     },
 
 }

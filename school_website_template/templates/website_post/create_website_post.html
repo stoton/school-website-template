@@ -14,14 +14,13 @@
         <style type="text/css">
 
             body {
-                background: url("/media/bg.png") no-repeat;
+                background: url("/media/bg2.jpg") no-repeat;
                 background-size: 100% 100%;
             }
 
             html {
                 height: 100%
             }
-
             .form-style-9{
                 max-width: 900px;
                 background: #FAFAFA;
@@ -29,7 +28,7 @@
                 margin: 50px auto;
                 box-shadow: 1px 1px 25px rgba(0, 0, 0, 0.35);
                 border-radius: 10px;
-                border: 6px solid #305A72;
+                border: 5px solid #305A30;
             }
             .form-style-9 ul{
                 padding:0;
@@ -41,21 +40,22 @@
                 margin-bottom: 10px;
                 min-height: 35px;
             }
-            .form-style-9 ul li  .field-style{
+            .form-style-9 ul li  .field-style {
                 box-sizing: border-box;
                 -webkit-box-sizing: border-box;
                 -moz-box-sizing: border-box;
                 padding: 8px;
                 outline: none;
-                border: 1px solid #B0CFE0;
+                border: 1px solid #305A24;
                 -webkit-transition: all 0.30s ease-in-out;
                 -moz-transition: all 0.30s ease-in-out;
                 -ms-transition: all 0.30s ease-in-out;
                 -o-transition: all 0.30s ease-in-out;
+            }
 
-            }.form-style-9 ul li  .field-style:focus{
-                box-shadow: 0 0 5px #B0CFE0;
-                border:1px solid #B0CFE0;
+            .form-style-9 ul li  .field-style:focus{
+                box-shadow: 0 0 5px #305A30;
+                border:1px solid #305A30;
             }
             .form-style-9 ul li .field-split{
                 width: 49%;
@@ -67,29 +67,32 @@
                 float:right;
             }
 
+            .btn-primary {
+                background: #006600;
+            }
+
         </style>
     </head>
 
     <body>
-
-        <div id="bg">
-        </div>
-            <div class="container">
+        <div id="position">
                 <form action="" method="post" enctype="multipart/form-data" class="form-style-9">
                     {% csrf_token %}
                     <ul>
                         <li>
                             <input type="text" name="title_field" class="field-style field-split align-left" placeholder="Tytuł" id="form.title}}"/>
-                            <input type="text" name="author_field" class="field-style field-split align-right" placeholder="Autor" id="form.title }}"/>
+                            <input type="text" name="author_field" class="field-style field-split align-right" placeholder="Autor" id="form.author }}"/>
                         </li>
 
                         <li>
                             {{ form.content }}
                         </li>
 
+                        <li>
+                            <input type="submit" value="Opublikuj" class="btn btn-primary btn-primary align-left">
+                        </li>
                     </ul>
-                    <input type="submit" value="Opublikuj" class="btn btn-primary">
                 </form>
-            </div>
+        </div>
     </body>
 </html>

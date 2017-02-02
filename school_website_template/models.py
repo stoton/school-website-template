@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from ckeditor_uploader.fields import RichTextUploadingField
+from .models_properties.website_post_properties import get_categories
 
 
 class WebsitePost(models.Model):
