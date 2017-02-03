@@ -1,4 +1,5 @@
 {% load staticfiles %}
+{% load static %}
 <!doctype html>
 <html>
     <head>
@@ -14,7 +15,7 @@
         <style type="text/css">
 
             body {
-                background: url("/media/bg2.jpg") no-repeat;
+                background: url("media/bg2.jpg") no-repeat;
                 background-size: 100% 100%;
             }
 
@@ -28,7 +29,7 @@
                 margin: 50px auto;
                 box-shadow: 1px 1px 25px rgba(0, 0, 0, 0.35);
                 border-radius: 10px;
-                border: 5px solid #305A30;
+                border: 5px solid #006600;
             }
             .form-style-9 ul{
                 padding:0;
@@ -46,15 +47,15 @@
                 -moz-box-sizing: border-box;
                 padding: 8px;
                 outline: none;
-                border: 1px solid #305A24;
+                border: 1px solid #006600;
                 -webkit-transition: all 0.30s ease-in-out;
                 -moz-transition: all 0.30s ease-in-out;
                 -o-transition: all 0.30s ease-in-out;
             }
 
             .form-style-9 ul li  .field-style:focus{
-                box-shadow: 0 0 5px #305A30;
-                border:1px solid #305A30;
+                box-shadow: 0 0 5px #006600;
+                border:1px solid #006600;
             }
             .form-style-9 ul li .field-split{
                 width: 49%;
@@ -85,18 +86,17 @@
                     {% csrf_token %}
                     <ul>
                         <li>
-                            <input type="text" name="title_field" class="field-style field-split align-left" placeholder="Tytuł" id="form.title}}"/>
-                            <input type="text" name="author_field" class="field-style field-split align-right" placeholder="Autor" id="form.author }}"/>
+                            <input id="id_title" name="title" type="text" class="field-style field-split align-left" placeholder="Tytuł" />
+                            <input id="id_author" name="author" type="text" class="field-style field-split align-right" placeholder="Autor" />
                         </li>
 
                         <li>
-                            {{ form.content }}
-                        </li>
-
-                        <li>
-                            <input type="submit" value="Opublikuj" class="btn btn-primary btn-primary align-left">
+                            <div class="django-ckeditor-widget" data-field-id="id_content">
+                                <textarea id="id_content" name="content" rows="10" cols="40"  data-processed="0" data-config='{"skin": "moono-lisa", "toolbar_Basic": [["Source", "-", "Bold", "Italic"]], "toolbar_Full": [["Styles", "Format", "Bold", "Italic", "Underline", "Strike", "SpellChecker", "Undo", "Redo"], ["Link", "Unlink", "Anchor"], ["Image", "Flash", "Table", "HorizontalRule"], ["TextColor", "BGColor"], ["Smiley", "SpecialChar"], ["Source"]], "toolbar": "Full", "height": 291, "width": 826, "filebrowserWindowWidth": 940, "filebrowserWindowHeight": 725, "filebrowserUploadUrl": "/ckeditor/upload/", "filebrowserBrowseUrl": "/ckeditor/browse/", "language": "pl"}' data-external-plugin-resources='[]' data-id="id_content" data-type="ckeditortype" title="content_editor"></textarea>
+                            </div>
                         </li>
                     </ul>
+                    <input type="submit" value="Opublikuj" class="btn btn-primary btn-primary align-left"/>
                 </form>
         </div>
     </body>
