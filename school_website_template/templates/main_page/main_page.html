@@ -18,6 +18,7 @@
             {% for post in list_of_website_posts %}
                 <p> {{ post.content|safe }}</p>
                 <p> {{ post.date }}</p>
+                <p> {{ post.category }}</p>
             {% endfor %}
         </div>
 		<p></p>

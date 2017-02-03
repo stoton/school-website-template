@@ -1,8 +1,7 @@
-def get_categories():
-    categories = (
+CATEGORIES = (
         ("wydarzenia", "wydarzenia"),
         ("informacje", "informacje"),
         ("konkursy", "konkursy"),
         ("wycieczki", "wycieczki"),
         ("sport", "sport"),)
-    return categories
+

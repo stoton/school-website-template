@@ -53,6 +53,18 @@
                 -o-transition: all 0.30s ease-in-out;
             }
 
+            .styled-select select {
+            background: transparent;
+            width: 268px;
+   padding: 5px;
+   font-size: 16px;
+   line-height: 1;
+   border: 0;
+   border-radius: 0;
+   height: 34px;
+   -webkit-appearance: none;
+   }
+
             .form-style-9 ul li  .field-style:focus{
                 box-shadow: 0 0 5px #006600;
                 border:1px solid #006600;
@@ -92,11 +104,16 @@
 
                         <li>
                             <div class="django-ckeditor-widget" data-field-id="id_content">
-                                <textarea id="id_content" name="content" rows="10" cols="40"  data-processed="0" data-config='{"skin": "moono-lisa", "toolbar_Basic": [["Source", "-", "Bold", "Italic"]], "toolbar_Full": [["Styles", "Format", "Bold", "Italic", "Underline", "Strike", "SpellChecker", "Undo", "Redo"], ["Link", "Unlink", "Anchor"], ["Image", "Flash", "Table", "HorizontalRule"], ["TextColor", "BGColor"], ["Smiley", "SpecialChar"], ["Source"]], "toolbar": "Full", "height": 291, "width": 826, "filebrowserWindowWidth": 940, "filebrowserWindowHeight": 725, "filebrowserUploadUrl": "/ckeditor/upload/", "filebrowserBrowseUrl": "/ckeditor/browse/", "language": "pl"}' data-external-plugin-resources='[]' data-id="id_content" data-type="ckeditortype" title="content_editor"></textarea>
+                                <textarea id="id_content" name="content" rows="10" cols="40"  data-processed="0" data-config='{"skin": "moono-lisa", "toolbar_Basic": [["Source", "-", "Bold", "Italic"]], "toolbar_Full": [["Styles", "Format", "Bold", "Italic", "Underline", "Strike", "SpellChecker", "Undo", "Redo"], ["Link", "Unlink", "Anchor"], ["Table", "HorizontalRule"], ["TextColor", "BGColor"], ["Smiley", "SpecialChar"], ["Source"]], "toolbar": "Full", "height": 291, "width": 826, "filebrowserWindowWidth": 940, "filebrowserWindowHeight": 725, "filebrowserUploadUrl": "/ckeditor/upload/", "filebrowserBrowseUrl": "/ckeditor/browse/", "language": "pl"}' data-external-plugin-resources='[]' data-id="id_content" data-type="ckeditortype" title="content_editor"></textarea>
                             </div>
                         </li>
+
+                        <li>
+                           <input type="submit" value="Opublikuj" class="btn btn-primary btn-primary align-left"/>
+                           {{ form.category }}
+                        </li>
                     </ul>
-                    <input type="submit" value="Opublikuj" class="btn btn-primary btn-primary align-left"/>
+
                 </form>
         </div>
     </body>
