@@ -11,6 +11,8 @@ class WebsitePost(models.Model):
     title = models.CharField(max_length=100)
     category = models.CharField(max_length=120, choices=CATEGORIES)
 
+    image = models.ImageField(blank=True)
+
     class Meta:
         verbose_name = 'wpis'
         verbose_name_plural = 'Wpisy'

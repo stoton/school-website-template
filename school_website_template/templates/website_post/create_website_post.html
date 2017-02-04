@@ -5,12 +5,17 @@
     <head>
         <title>Dodawanie wpisów na stronę</title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css">
+
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
         <script type="text/javascript" src="{% static "ckeditor/ckeditor/ckeditor.js" %}"></script>
         <script type="text/javascript" src="{% static "ckeditor/ckeditor-init.js" %}"></script>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/js/bootstrap-select.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 
         <style type="text/css">
 
@@ -27,9 +32,8 @@
                 background: #FAFAFA;
                 padding: 30px;
                 margin: 50px auto;
-                box-shadow: 1px 1px 25px rgba(0, 0, 0, 0.35);
+                box-shadow: 2px 2px 25px rgba(0, 0, 0, 0.35);
                 border-radius: 10px;
-                border: 5px solid #006600;
             }
             .form-style-9 ul{
                 padding:0;
@@ -47,23 +51,10 @@
                 -moz-box-sizing: border-box;
                 padding: 8px;
                 outline: none;
-                border: 1px solid #006600;
                 -webkit-transition: all 0.30s ease-in-out;
                 -moz-transition: all 0.30s ease-in-out;
                 -o-transition: all 0.30s ease-in-out;
             }
-
-            .styled-select select {
-            background: transparent;
-            width: 268px;
-   padding: 5px;
-   font-size: 16px;
-   line-height: 1;
-   border: 0;
-   border-radius: 0;
-   height: 34px;
-   -webkit-appearance: none;
-   }
 
             .form-style-9 ul li  .field-style:focus{
                 box-shadow: 0 0 5px #006600;
@@ -80,13 +71,20 @@
                 float:right;
             }
 
-            .btn-primary {
+            .btn-lg {
                 background: #006600;
+                color: white;
             }
 
-            .btn-primary:hover {
+            .btn-lg:hover {
                 box-shadow: 0 0 5px #305A30;
                 background: #006600;
+                color: white;
+            }
+
+            .selectpicker {
+                float:right;
+                color: white;
             }
 
         </style>
@@ -94,8 +92,8 @@
 
     <body>
         <div id="position">
-                <form action="" method="post" enctype="multipart/form-data" class="form-style-9">
-                    {% csrf_token %}
+            <form action="" method="post" enctype="multipart/form-data" class="form-style-9">
+                {% csrf_token %}
                     <ul>
                         <li>
                             <input id="id_title" name="title" type="text" class="field-style field-split align-left" placeholder="Tytuł" />
@@ -104,17 +102,27 @@
 
                         <li>
                             <div class="django-ckeditor-widget" data-field-id="id_content">
-                                <textarea id="id_content" name="content" rows="10" cols="40"  data-processed="0" data-config='{"skin": "moono-lisa", "toolbar_Basic": [["Source", "-", "Bold", "Italic"]], "toolbar_Full": [["Styles", "Format", "Bold", "Italic", "Underline", "Strike", "SpellChecker", "Undo", "Redo"], ["Link", "Unlink", "Anchor"], ["Table", "HorizontalRule"], ["TextColor", "BGColor"], ["Smiley", "SpecialChar"], ["Source"]], "toolbar": "Full", "height": 291, "width": 826, "filebrowserWindowWidth": 940, "filebrowserWindowHeight": 725, "filebrowserUploadUrl": "/ckeditor/upload/", "filebrowserBrowseUrl": "/ckeditor/browse/", "language": "pl"}' data-external-plugin-resources='[]' data-id="id_content" data-type="ckeditortype" title="content_editor"></textarea>
+                                <textarea id="id_content" name="content" rows="10" cols="40"  data-processed="0" data-config='{"skin": "moono-lisa", "toolbar_Basic": [["Source", "-", "Bold", "Italic"]], "toolbar_Full": [["Styles", "Format", "Bold", "Italic", "Underline", "Strike", "SpellChecker", "Undo", "Redo"], ["Link", "Unlink", "Anchor"], ["Table", "HorizontalRule"], ["TextColor", "BGColor"], ["Smiley", "SpecialChar"], ["Source"]], "toolbar": "Full", "height": 291, "width": 838, "filebrowserWindowWidth": 940, "filebrowserWindowHeight": 725, "filebrowserUploadUrl": "/ckeditor/upload/", "filebrowserBrowseUrl": "/ckeditor/browse/", "language": "pl"}' data-external-plugin-resources='[]' data-id="id_content" data-type="ckeditortype" title="content_editor"></textarea>
                             </div>
                         </li>
 
                         <li>
-                           <input type="submit" value="Opublikuj" class="btn btn-primary btn-primary align-left"/>
-                           {{ form.category }}
+                            <select id="id_category" name="category" title="Wybierz kategorię" class="selectpicker">
+                                {% for value, text in form.fields.category.choices %}
+                                        {% if forloop.counter != 1 %}
+                                             <option value="{{ value }}">{{ text }}</option>
+                                        {% endif %}
+                                {% endfor %}
+                            </select>
+
+                            <input type="submit" value="Opublikuj" class="btn btn-lg align-right"/>
+                        </li>
+
+                        <li>
+                        <input id="id_image" name="image" type="file" />
                         </li>
                     </ul>
-
-                </form>
+            </form>
         </div>
     </body>
 </html>
