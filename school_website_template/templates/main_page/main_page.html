@@ -3,9 +3,72 @@
     <head>
         <meta charset="UTF-8">
         <title>Strona główna</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         {% load static from staticfiles %}
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+        <style>
+            body
+            {
+                background-color: #8CA4BE;
+            }
+            .container
+            {
+                height: 3000px;
+            }
+            .jumbotron
+            {
+                background-color: #E6EDF3;
+            }
+            .panel
+            {
+                height: 100%;
+                float: left;
+                width: 25%;
+                background-color: #5F7D9D;
+            }
+            .panel ul
+            {
+                height: 25%;
+            }
+            .panel li
+            {
+                color: ghostwhite;
+                text-align: center;
+                margin-bottom: 2px;
+                font-size: 100%;
+                width: 100%;
+                padding-top: 5%;
+                padding-bottom: 5%;
+                background: #3A5D81;
+            }
+            .panel li:hover
+            {
+                color: #5F7D9D;
+                background: #E6EDF3;
+            }
+            .table
+            {
+                border-radius: 5px;
+                background-color: #BCCCDD;
+                float: right;
+                margin: 0 0 1% 2%;
+                width: 70%;
+                height: 10%;
+            }
+            #img
+            {
+                border-radius: 5px;
+                width: 50%;
+            }
+            .footer
+            {
+                clear: both;
+                background-color: #E6EDF3;
+                text-align: center;
+                height: 5%;
+            }
+        </style>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     </head>
 
@@ -14,13 +77,28 @@
             <div class="jumbotron">
                 <h1>Zespół Szkół Agro-technicznych im. Wincentego Witosa</h1>
             </div>
-
-            {% for post in list_of_website_posts %}
-                <p> {{ post.content|safe }}</p>
-                <p> {{ post.date }}</p>
-                <p> {{ post.category }}</p>
-                <p> <img src="{{ post.image.url }}"/></p>
-            {% endfor %}
+            <div class="panel">
+                <ul class="nav nav-pills nav-stacked">
+                    <b>
+                    <li>AKTUALNOSCI</li>
+                    <li>SMIECI</li>
+                    <li>GALERIA</li>
+                    <li>KOTKI W PIWNICY</li>
+                    <li>CZTERY LATA W TRZY GODZINY</li>
+                    </b>
+                </ul>
+            </div>
+                {% for post in list_of_website_posts %}
+                    <div class="table">
+                        <p> <img id="img" src="{{ post.image.url }}"/></p>
+                        <p> {{ post.content|safe }}</p>
+                        <p> {{ post.date }}</p>
+                        <p> {{ post.category }}</p>
+                    </div>
+                {% endfor %}
+            <div class="footer">
+                Smieszna stopka
+            </div>
         </div>
 		<p></p>
     </body>
