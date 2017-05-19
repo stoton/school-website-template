@@ -2,17 +2,13 @@ from django.views.generic.list import ListView
 from .models import WebsitePost, Gallery
 from django.views.generic.edit import CreateView
 from .forms import UploadForm, WebsitePostForm
-from django.core.urlresolvers import reverse
-from django.views import generic
-from . import forms
-
 
 class MainPageView(ListView):
     template_name = 'main_page/main_page.html'
     context_object_name = 'list_of_website_posts'
 
     def get_queryset(self):
-        return WebsitePost.objects.all()
+        return WebsitePost.objects.all()[:2]
 
 
 class GalleryView(ListView):

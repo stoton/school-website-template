@@ -1,134 +1,147 @@
 <!DOCTYPE html>
 <html lang="pl">
-    <head>
+<head>
         <meta charset="UTF-8">
         <title>Strona główna</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         {% load static from staticfiles %}
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
-        <style>
-            body
-            {
-                background-color: #8CA4BE;
-            }
-            .container
-            {
-            }
-            .jumbotron
-            {
-                background-color: #E6EDF3;
-            }
-            .panel
-            {
-                height: 100%;
-                float: left;
-                width: 25%;
-                background-color: #5F7D9D;
-            }
-            .panel ul
-            {
-                height: 25%;
-            }
-            .panel li
-            {
-                color: ghostwhite;
-                text-align: center;
-                border-radius: 5%;
-                margin-bottom: 2px;
-                font-size: 2vmin;
-                width: 100%;
-                padding-top: 5%;
-                padding-bottom: 5%;
-                background: #3A5D81;
-            }
-            .panel li:hover
-            {
-                color: #5F7D9D;
-                background: #E6EDF3;
-            }
-            .table
-            {
-                border-radius: 5px;
-                background-color: #BCCCDD;
-                float: right;
-                margin: 0 0 1% 2%;
-                width: 70%;
-                height: 10%;
-            }
-            .table img
-            {
-                border-radius: 5px;
-            }
-            .footer
-            {
-                border-radius: 5px;
-                clear: both;
-                background-color: #E6EDF3;
-                text-align: center;
-                padding:5%;
-            }
-            @media screen and (min-height: 1300px)
-            {
-                .panel li{
-                    font-size: 100%;
-                }
-            }
-            @media screen and (min-height: 500px)
-            {
-                .table img{
-                    display: block;
-                    float:left;
-                    width: 50%;
-                }
-                .text{
-                    float: left;
-                }
-            }
-            @media screen and (max-height: 500px)
-            {
-                .table img{
-                    display: block;
-                    width: 100%;
-                }
-                .text{
-                    font-size: 50%;
-                }
-            }
-        </style>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    </head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Sahitya" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
+    <style>
+
+    img {
+        margin-right: 10px;
+        margin-bottom: 10px;
+        max-width: 480px;
+    }
+
+    body {
+        display: flex;
+        min-height: 100vh;
+        flex-direction: column;
+    }
+    </style>
+
+    </head>
     <body>
-        <div class="container">
-            <div class="jumbotron">
-                <h1>Zespół Szkół Agro-technicznych im. Wincentego Witosa</h1>
-            </div>
-            <div class="panel">
-                <ul class="nav nav-pills nav-stacked">
-                    <b>
-                    <li>AKTUALNOSCI</li>
-                    <li>SMIECI</li>
-                    <li>GALERIA</li>
-                    <li>KOTKI W PIWNICY</li>
-                    <li>CZTERY LATA W TRZY GODZINY</li>
-                    </b>
-                </ul>
-            </div>
-                {% for post in list_of_website_posts %}
-                    <div class="table">
-                        <p> <img class="img-thumbnail" src="{{ post.image.url }}"/></p>
-                        <div class="text">
-                            <p> {{ post.content|safe }}</p>
-                            <p> {{ post.date }}</p>
-                            <p> {{ post.category }}</p>
-                        </div>
-                    </div>
-                {% endfor %}
-            <div class="footer">
-                Smieszna stopka
-            </div>
+            <div class="green navbar-fixed">
+                <nav>
+                    <ul id="dropdown1" class="dropdown-content">
+                        <li><a href="#!">EyeBom Design & Solutions</a></li>
+                        <li><a href="#!">EyeClo</a></li>
+                    </ul>
+                    <ul id="dropdown2" class="dropdown-content">
+                        <li><a href="#!">Book Cover Design</a></li>
+                        <li><a href="#!">Icon Design</a></li>
+                        <li><a href="#!">Poster Design</a></li>
+                        <li><a href="#!">Print Design</a></li>
+                        <li><a href="#!">Stationery Design</a></li>
+                        <li><a href="#!">Sticker Design</a></li>
+                        <li><a href="#!">T-Shirt Design</a></li>
+                        <li><a href="#!">Banner Design</a></li>
+                        <li><a href="#!">Magazine Design</a></li>
+                        <li><a href="#!">Business Cards</a></li>
+                        <li><a href="#!">Logo Design</a></li>
+                        <li><a href="#!">Brochures</a></li>
+                    </ul>
+                <div class="green nav-wrapper">  <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                  <ul class="left hide-on-med-and-down">
+                    <li class="active"><a href="#">cos tam</a></li>
+                    <li><a a class="dropdown-button" data-beloworigin="true" data-hover="true" data-constrainwidth="false" href="#!" data-activates="dropdown2">cos tam</a></li>
+                    <li><a class="dropdown-button" data-beloworigin="true" data-hover="true" data-constrainwidth="false" href="#!" data-activates="dropdown1">cos tam</a></li>
+                    <li><a href="#">cos tam</a></li>
+                    <li><a href="#">cos tam</a></li>
+                    <li><a href="#">cos tam</a></li>
+                  </ul>
+                  <ul id="mobile-demo" class="side-nav">
+                    <li class="no-padding">
+                      <ul class="collapsible collapsible-accordion">
+                        <li class="bold"><a class="collapsible-header waves-teal">Dropdown 1</a>
+                          <div class="collapsible-body">
+                            <ul>
+                              <li><a href="#">Link1</a></li>
+                              <li><a href="#">link2</a></li>
+                              <li><a href="#">link3</a></li>
+                            </ul>
+                          </div>
+                        </li>
+                        <li class="bold"><a class="collapsible-header waves-teal">Dropdown 2</a>
+                          <div class="collapsible-body">
+                            <ul>
+                              <li><a href="#">link1</a></li>
+                              <li><a href="#">link2</a></li>
+                              <li><a href="#">link3</a></li>
+                            </ul>
+                          </div>
+                        </li>
+                        <li class="bold"><a class="collapsible-header waves-teal">Dropdown 3</a>
+                          <div class="collapsible-body">
+                            <ul>
+                              <li><a href="#">link1</a></li>
+                              <li><a href="#">link2</a></li>
+                              <li><a href="#">link3</a></li>
+                            </ul>
+                          </div>
+                            </li>
+                            <li class="bold"><a href="#" class="waves-teal">Normal link 1</a></li>
+                            <li class="bold"><a href="#" class="waves-teal">Normal link 2</a></li>
+                        </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
         </div>
-		<p></p>
+
+        <br/>
+
+        <div class="container">
+            {% for post in list_of_website_posts %}
+                <div class="row ">
+                        <img src="{{ post.image.url }}" align="left">
+                        <p>{{ post.content|safe }}</p>
+                  </div>
+                </br>
+                </br>
+        {% endfor %}
+    </div>
+
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
+
+    <script>
+     $(".button-collapse").sideNav();
+    </script>
+
+     <footer class="page-footer green">
+            <div class="container">
+                <div class="row">
+                    <div class="col l6 s12">
+                        <h5 class="white-text">PATRYK SZKYUTAK</h5>
+                        <p class="grey-text text-lighten-4">ZSA-T ROPCZYCE</p>
+                    </div>
+
+                    <div class="col l4 offset-l2 s12">
+                        <h5 class="white-text">Polecane przez nas strony:</h5>
+
+                        <ul>
+                            <li><a class="grey-text text-lighten-3" href="#">link1</a></li>
+                            <li><a class="grey-text text-lighten-3" href="#">link2</a></li>
+                            <li><a class="grey-text text-lighten-3" href="#">link3</a></li>
+                            <li><a class="grey-text text-lighten-3" href="#">link4</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-copyright green darken-1">
+                <div class="container">
+                    @ 2017 ZSAT-ROPCZYCE wszelkie prawa niezastrzeżone
+                    <a class="grey-text text-lighten-4 right" href="#">cos tam</a>
+                </div>
+            </div>
+        </footer>
     </body>
 </html>

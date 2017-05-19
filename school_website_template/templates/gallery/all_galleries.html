@@ -23,8 +23,8 @@
        {% for photo in gallery.image_in_gallery.all|slice:":1" %}
 
            <a href="{{ gallery.id }}">
-           <div class="image" style="background-image: url({{ photo.image.url }});">
-           </div>
+            <div class="image" style="background-image: url({{ photo.image.url }});">
+            </div>
            </a>
        {% endfor %}
     {% endfor %}
