@@ -1,33 +1,15 @@
-<!DOCTYPE html>
-<html lang="pl">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-
-    <style>
-        .image {
-		background-position:center;
-		background-size:cover;
-		width: 400px;
-		height: 400px;
-        float: left;
-        margin-right: 100px;
-        }
-
-    </style>
-
-</head>
-
-<body>
-    {% for gallery in list_of_images %}
-       {% for photo in gallery.image_in_gallery.all|slice:":1" %}
-
-           <a href="{{ gallery.id }}">
-            <div class="image" style="background-image: url({{ photo.image.url }});">
-            </div>
-           </a>
-       {% endfor %}
-    {% endfor %}
-</body>
-
-</html>
+{% extends "base.html" %}
+    {% block content %}
+    <main class="center">
+    <br/>
+    <br/>
+        {% for gallery in list_of_images %}
+           {% for photo in gallery.image_in_gallery.all|slice:":1" %}
+               <a href="{{ gallery.id }}">
+                <img src="{{ photo.image.url }}">
+                </div>
+               </a>
+           {% endfor %}
+        {% endfor %}
+    </main>
+    {% endblock %}

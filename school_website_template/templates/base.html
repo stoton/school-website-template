@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="UTF-8">
+        <title>Strona główna</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        {% load static from staticfiles %}
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Sahitya" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css"/>
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+        <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
+
+        <style>
+            img {
+                margin-right: 10px;
+                margin-bottom: 10px;
+                max-width: 480px;
+            }
+
+            body {
+                display: flex;
+                min-height: 100vh;
+                flex-direction: column;
+            }
+
+            main {
+                flex: 1 0 auto;
+            }
+        </style>
+
+    </head>
+
+    <body>
+        <div class="green navbar-fixed">
+                <nav>
+                    <ul id="dropdown2" class="dropdown-content">
+                        {% for key, value in link.dropdown2.items %}
+                        <li><a href="{{ value }}">{{ key }}</a></li>
+                        {% endfor %}
+                    </ul>
+                    <ul id="dropdown1" class="dropdown-content">
+                        {% for key, value in link.dropdown1.items %}
+                        <li><a href="{{ value }}">{{ key }}</a></li>
+                        {% endfor %}
+                    </ul>
+                <div class="green nav-wrapper">  <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                 <ul class="left hide-on-med-and-down">
+                     {% for key, value in link.links.items %}
+                         <li><a href="{{ link.hyperlinks|key:key}}" class="dropdown-button" data-beloworigin="true" data-hover="true" data-constrainwidth="false"  data-activates="{{ value }}">{{ key }}</a></li>
+                     {% endfor %}
+                 </ul>
+                  <ul id="mobile-demo" class="side-nav">
+                    <li class="no-padding">
+                      <ul class="collapsible collapsible-accordion">
+                        <li class="bold"><a class="collapsible-header waves-teal">Dropdown 1</a>
+                          <div class="collapsible-body">
+                            <ul>
+                              <li><a href="#">Link1</a></li>
+                              <li><a href="#">link2</a></li>
+                              <li><a href="#">link3</a></li>
+                            </ul>
+                          </div>
+                        </li>
+                        <li class="bold"><a class="collapsible-header waves-teal">Dropdown 2</a>
+                          <div class="collapsible-body">
+                            <ul>
+                              <li><a href="#">link1</a></li>
+                              <li><a href="#">link2</a></li>
+                              <li><a href="#">link3</a></li>
+                            </ul>
+                          </div>
+                        </li>
+                        <li class="bold"><a class="collapsible-header waves-teal">Dropdown 3</a>
+                          <div class="collapsible-body">
+                            <ul>
+                              <li><a href="#">link1</a></li>
+                              <li><a href="#">link2</a></li>
+                              <li><a href="#">link3</a></li>
+                            </ul>
+                          </div>
+                            </li>
+                            <li class="bold"><a href="#" class="waves-teal">Normal link 1</a></li>
+                            <li class="bold"><a href="#" class="waves-teal">Normal link 2</a></li>
+                        </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+    {% block content %}
+
+    {% endblock %}
+
+    <footer class="page-footer green">
+            <div class="container">
+                <div class="row">
+                    <div class="col l6 s12">
+                        <h5 class="white-text">Nasza szkoła!</h5>
+                        <p class="grey-text text-lighten-4">{{ link.schoolName }}</p>
+                    </div>
+
+                    <div class="col l4 offset-l2 s12">
+                        <h5 class="white-text">Polecane przez nas strony:</h5>
+
+                        <ul>
+                            {% for key, value in link.links_footer.items %}
+                            <li><a class="grey-text text-lighten-3" href="{{ value }}">{{ key }}</a></li>
+
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-copyright green darken-1">
+                <div class="container">
+                    @ 2017 ZSAT-ROPCZYCE wszelkie prawa niezastrzeżone
+                    <a class="grey-text text-lighten-4 right">{{ link.chief }}</a>
+                </div>
+            </div>
+        </footer>
+
+    <script>
+        $(".button-collapse").sideNav();
+    </script>
+
+    </body>
+
+</html>

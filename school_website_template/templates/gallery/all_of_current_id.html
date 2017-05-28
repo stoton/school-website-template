@@ -1,29 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "base.html" %}
 
-    {% for img in list_of_images %}
-        <div>
-            {{ img.title }}
-            <br/><br/>
-            <img class="img" src="{{ img.image.url }}" onload="resize_image(this)"/>
-            <br/>
-        </div>
+{% block content %}
+    <main class="center">
 
-    {% endfor %}
+        <style>
+            img {
+                max-width: 480px;
+            }
+        </style>
 
-</body>
+        {% for img in list_of_images %}
+            <div>
+                {{ img.title }}
+                <br/><br/>
+                <img class="img-responsive" src="{{ img.image.url }}"/>
+                <br/>
+            </div>
 
-<script>
-
-    function resize_image(image) {
-        image.style.width = '30%'
-        image.style.height = 'auto'
-    }
-
-</script>
-</html>
+        {% endfor %}
+    </main>
+{% endblock %}
