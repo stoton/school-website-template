@@ -6,7 +6,7 @@
     <div class="container">
         {% for post in list_of_website_posts %}
             <div class="row">
-                <img src="{{ post.image.url }}" align="left">
+                <img src="{{ post.image.url }}" align="left" class="img-post">
                 <p>{{ post.content|safe }}</p>
             </div>
             <br/>

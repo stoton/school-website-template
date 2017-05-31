@@ -14,11 +14,17 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
 
         <style>
-            img {
+            .img-post {
                 margin-right: 10px;
                 margin-bottom: 10px;
                 max-width: 480px;
             }
+
+            .img-logo {
+                margin-top: 10px;
+            }
+
+
 
             body {
                 display: flex;
@@ -32,8 +38,6 @@
         </style>
 
     </head>
-
-    <body>
         <div class="green navbar-fixed">
                 <nav>
                     <ul id="dropdown2" class="dropdown-content">
@@ -58,18 +62,18 @@
                         <li class="bold"><a class="collapsible-header waves-teal">Dropdown 1</a>
                           <div class="collapsible-body">
                             <ul>
-                              <li><a href="#">Link1</a></li>
-                              <li><a href="#">link2</a></li>
-                              <li><a href="#">link3</a></li>
+                              <li><a href="#">dowolny link</a></li>
+                              <li><a href="#">dowolny link</a></li>
+                              <li><a href="#">dowolny link</a></li>
                             </ul>
                           </div>
                         </li>
                         <li class="bold"><a class="collapsible-header waves-teal">Dropdown 2</a>
                           <div class="collapsible-body">
                             <ul>
-                              <li><a href="#">link1</a></li>
-                              <li><a href="#">link2</a></li>
-                              <li><a href="#">link3</a></li>
+                              <li><a href="#">dowolny link</a></li>
+                              <li><a href="#">dowolny link</a></li>
+                              <li><a href="#">dowolny link</a></li>
                             </ul>
                           </div>
                         </li>
@@ -90,6 +94,13 @@
                 </div>
             </nav>
         </div>
+
+        <div class="center">
+            <img src="{{ link.logo }}" class="img-logo" >
+            <hr>
+        </div>
+
+
 
     {% block content %}
 

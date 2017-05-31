@@ -1,18 +1,18 @@
 class Link:
 
     hyperlinks = {
-        'STRONA GŁÓWNA': '/',
+        'STRONA GŁÓWNA': '/main',
         'O NAS': '/aboutUs',
         'KONTAKT': '/contact',
-        'GALERIA': '/gallery/all',
-      #  'DODAJ POST': '/addPost'
+        'GALERIA': '/gallery/all'
+        #'DODAJ POST': '/addPost'
     }
     links = {
         'STRONA GŁÓWNA': 'dropdown1',
         'O NAS': 'dropdown2',
         'KONTAKT': '0',
         'GALERIA': '0',
-       # 'DODAJ POST': '0'
+        #'DODAJ POST': '0'
     }
 
     schoolName = "Z-SAT ROPCZYCE"
@@ -23,6 +23,8 @@ class Link:
         "tutorial linux": "http://sequoia.ict.pwr.wroc.pl/~witold/linuxuwr/",
         "ZSA-T ROPCZYCE": "http://www.zsat-ropczyce.pl/"
     }
+
+    logo = "http://www.zsat-ropczyce.pl/sites/default/files/styles/responsive_slideshow_style/public/banner/rekrutacja2017.jpg?itok=grwOAfoh"
 
     chief = "Paweł Paśko"
 
@@ -37,4 +39,4 @@ class Link:
     }
 
     def header(self):
-        return self.links, self.hyperlinks, self.schoolName, self.links_footer, self.chief, self.dropdown1, self.dropdown2
+        return self.links, self.hyperlinks, self.schoolName, self.links_footer, self.chief, self.dropdown1, self.dropdown2, self.logo
